@@ -1,5 +1,5 @@
 #################################################################
-# Dockerfile to build Zimbra Collaboration 8.8.7 container images
+# Dockerfile to build Zimbra Collaboration 8.8.15 container images
 # Based on Ubuntu 16.04
 #################################################################
 FROM ubuntu:16.04
