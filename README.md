@@ -1,6 +1,3 @@
-[![](https://images.microbadger.com/badges/image/jorgedlcruz/zimbra.svg)](https://microbadger.com/images/jorgedlcruz/zimbra "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/jorgedlcruz/zimbra.svg)](https://microbadger.com/images/jorgedlcruz/zimbra "Get your own version badge on microbadger.com")
-
 # Zimbra
 In this Repository you will find how to install Zimbra on Docker
 
@@ -15,13 +12,13 @@ One of the advantages of using docker is that the host OS does not matter, the c
 ## Downloading the image
 The first step is to pull this image into your docker environment, for that just run the next:
 ```bash
-docker pull jorgedlcruz/zimbra
+docker pull maattt10/zimbra8.8.15
 ```
 
 ## Creating Zimbra Containers
-Now that we have an image called jorgedlcruz/zimbra, we can do a docker run with some special parameters, like this:
+Now that we have an image called maattt10/zimbra8.8.15, we can do a docker run with some special parameters, like this:
 ```bash
-docker run -p 25:25 -p 80:80 -p 465:465 -p 587:587 -p 110:110 -p 143:143 -p 993:993 -p 995:995 -p 443:443 -p 8080:8080 -p 8443:8443 -p 7071:7071 -p 9071:9071 -h zimbra-docker.zimbra.io --dns 127.0.0.1 --dns 8.8.8.8 -i -t -e PASSWORD=Zimbra2017 jorgedlcruz/zimbra
+docker run -p 25:25 -p 80:80 -p 465:465 -p 587:587 -p 110:110 -p 143:143 -p 993:993 -p 995:995 -p 443:443 -p 8080:8080 -p 8443:8443 -p 7071:7071 -p 9071:9071 -h zimbra-docker.zimbra.io --dns 127.0.0.1 --dns 8.8.8.8 -i -t -e PASSWORD=Zimbra2017 maattt10/zimbra8.8.15
 ```
 As you can see we tell the container the ports we want to expose, and on which port, we also specify the container hostname, the password foir the Zimbra Administrator Account, and the image to use.
 
@@ -43,12 +40,12 @@ The content of the Dockerfile and the start.sh is based on the next Script - Zim
 Download from github, you will need git installed on your OS
 
 ```bash
-git clone https://github.com/jorgedlcruz/zimbra-docker.git
+git clone maattt10/zimbra8.8.15.git
 ```
 ### Using wget
 For those who want to use wget, follow the next instructions to download the Zimbra-docker package. You might need wget and unzip installed on your OS
 ```bash
-wget https://github.com/jorgedlcruz/zimbra-docker/archive/master.zip
+wget maattt10/zimbra8.8.15/archive/master.zip
 unzip master.zip
 ```
 
@@ -56,7 +53,7 @@ unzip master.zip
 The `Makefile` in the docker/ directory provides you with a convenient way to build your docker image. You will need make on your OS. Just run
 
 ```bash
-cd zimbra-docker/docker
+cd zimbra8.8.15/docker
 sudo make
 ```
 
@@ -75,7 +72,7 @@ This will create the container in few seconds, and run automatically the start.s
 
 * Install a DNS Server based in dnsmasq
 * Configure all the DNS Server to resolve automatically internal the MX and the hostname that we define while launch the container.
-* Install a fresh Zimbra Collaboration 8.8.7 within Zimbra Chat and Drive!
+* Install a fresh Zimbra Collaboration 8.8.15 within Zimbra Chat and Drive!
 * Create 2 files to automate the Zimbra Collaboration installation, the keystrokes and the config.defaults.
 * Launch the installation of Zimbra based only in the .install.sh -s
 * Inject the config.defaults file with all the parameters that is autoconfigured with the Hostname, domain, IP, and password that you define before.
@@ -97,7 +94,9 @@ zmcontrol restart
 ```
 
 ## Distributed under MIT license
-Copyright (c) 2017 Jorge de la Cruz
+Copyright (c) 2019 Matthieu Hébert
+
+Forked from https://github.com/jorgedlcruz/zimbra-docker.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
