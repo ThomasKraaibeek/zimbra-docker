@@ -12,7 +12,7 @@ One of the advantages of using docker is that the host OS does not matter, the c
 ## Downloading the image
 The first step is to pull this image into your docker environment, for that just run the next:
 ```bash
-docker pull thomaskraaibeek/zimbra8.8.15
+docker pull thomaskraaibeek/zimbra-docker
 ```
 
 ## Creating Zimbra Containers
@@ -40,12 +40,12 @@ The content of the Dockerfile and the start.sh is based on the next Script - Zim
 Download from github, you will need git installed on your OS
 
 ```bash
-git clone ThomasKraaibeek/zimbra8.8.15.git
+git clone ThomasKraaibeek/zimbra-docker.git
 ```
 ### Using wget
 For those who want to use wget, follow the next instructions to download the Zimbra-docker package. You might need wget and unzip installed on your OS
 ```bash
-wget ThomasKraaibeek/zimbra8.8.15/archive/master.zip
+wget ThomasKraaibeek/zimbra-docker/archive/master.zip
 unzip master.zip
 ```
 
@@ -53,7 +53,7 @@ unzip master.zip
 The `Makefile` in the docker/ directory provides you with a convenient way to build your docker image. You will need make on your OS. Just run
 
 ```bash
-cd zimbra8.8.15/docker
+cd zimbra-docker/docker
 sudo make
 ```
 
