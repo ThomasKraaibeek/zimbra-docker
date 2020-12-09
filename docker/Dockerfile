@@ -27,6 +27,6 @@ COPY opt /opt/
 
 COPY etc /etc/
 
-CMD ["/bin/bash", "/opt/jobhandler.sh", "-d"]
+#CMD ["/bin/bash", "/opt/jobhandler.sh", "-d"]
 
-# CMD ["/bin/bash", "/opt/start.sh", "-d"]
+CMD ["/bin/bash", "/opt/start.sh", "-d"]

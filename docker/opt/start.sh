@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ## Preparing all the variables like IP, Hostname, etc, all of them from the container
 sleep 5
 HOSTNAME=$(hostname -a)
@@ -149,6 +149,15 @@ fi
 
 su - zimbra -c 'zmcontrol restart'
 echo "You can now access your Zimbra Collaboration Server"
+
+su - zimbra
+zmprov -l sp admin@zimbra.io pass
+zmprov -l mcf zimbraReverseProxySendPop3Xoip FALSE
+zmprov -l ms zimbra-docker.zimbra.io zimbraReverseProxyPop3SaslPlainEnabled TRUE
+zmprov -l ms zimbra-docker.zimbra.io zimbraReverseProxyPop3StartTlsMode on
+zmcontrol stop
+zmcontrol start
+exit
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done

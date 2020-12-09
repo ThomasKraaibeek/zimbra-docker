@@ -12,7 +12,7 @@ One of the advantages of using docker is that the host OS does not matter, the c
 ## Downloading the image
 The first step is to pull this image into your docker environment, for that just run the next:
 ```bash
-docker pull maattt10/zimbra8.8.15
+docker pull thomaskraaibeek/zimbra8.8.15
 ```
 
 ## Creating Zimbra Containers
@@ -40,12 +40,12 @@ The content of the Dockerfile and the start.sh is based on the next Script - Zim
 Download from github, you will need git installed on your OS
 
 ```bash
-git clone maattt10/zimbra8.8.15.git
+git clone ThomasKraaibeek/zimbra8.8.15.git
 ```
 ### Using wget
 For those who want to use wget, follow the next instructions to download the Zimbra-docker package. You might need wget and unzip installed on your OS
 ```bash
-wget maattt10/zimbra8.8.15/archive/master.zip
+wget ThomasKraaibeek/zimbra8.8.15/archive/master.zip
 unzip master.zip
 ```
 
@@ -94,9 +94,9 @@ zmcontrol restart
 ```
 
 ## Distributed under MIT license
-Copyright (c) 2019 Matthieu Hébert
+Copyright (c) 2020 Thomas Kraaibeek
 
-Forked from https://github.com/jorgedlcruz/zimbra-docker.
+Forked from https://github.com/maattt/zimbra-docker.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
