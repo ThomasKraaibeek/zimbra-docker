@@ -3,7 +3,6 @@
 sleep 5
 HOSTNAME=$(hostname -a)
 DOMAIN=$(hostname -d)
-PASSWORD="pass" # changed password
 CONTAINERIP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 RANDOMHAM=$(date +%s|sha256sum|base64|head -c 10)
 RANDOMSPAM=$(date +%s|sha256sum|base64|head -c 10)
@@ -150,14 +149,12 @@ fi
 su - zimbra -c 'zmcontrol restart'
 echo "You can now access your Zimbra Collaboration Server"
 
-su - zimbra
-zmprov -l sp admin@zimbra.io pass
-zmprov -l mcf zimbraReverseProxySendPop3Xoip FALSE
-zmprov -l ms zimbra-docker.zimbra.io zimbraReverseProxyPop3SaslPlainEnabled TRUE
-zmprov -l ms zimbra-docker.zimbra.io zimbraReverseProxyPop3StartTlsMode on
-zmcontrol stop
-zmcontrol start
-exit
+echo "Setting up plain auth and changing password"
+su - zimbra -c 'zmprov -l sp admin@zimbra.io pass'
+su - zimbra -c 'zmprov -l mcf zimbraReverseProxySendPop3Xoip FALSE'
+su - zimbra -c 'zmprov -l ms zimbra-docker.zimbra.io zimbraReverseProxyPop3SaslPlainEnabled TRUE'
+su - zimbra -c 'zmprov -l ms zimbra-docker.zimbra.io zimbraReverseProxyPop3StartTlsMode on'
+su - zimbra -c 'zmcontrol restart'
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done
