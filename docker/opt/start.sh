@@ -3,6 +3,7 @@
 sleep 5
 HOSTNAME=$(hostname -a)
 DOMAIN=$(hostname -d)
+PASSWORD="pass" # changed password
 CONTAINERIP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 RANDOMHAM=$(date +%s|sha256sum|base64|head -c 10)
 RANDOMSPAM=$(date +%s|sha256sum|base64|head -c 10)
@@ -147,7 +148,7 @@ then
 fi
 
 su - zimbra -c 'zmcontrol restart'
-echo "You can access now to your Zimbra Collaboration Server"
+echo "You can now access your Zimbra Collaboration Server"
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done
