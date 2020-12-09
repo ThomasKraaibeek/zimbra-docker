@@ -1,5 +1,5 @@
 #!/bin/sh
-until [ -f /opt/zimbra/zmsetup.*.log ] && [ -f "/opt/zimbra/log/imapd.pid" ] # Zimbra is done setting up and servers are started
+until [ -f /opt/zimbra/log/zmsetup.*.log ] && [ -f "/opt/zimbra/log/imapd.pid" ] # Zimbra is done setting up and servers are started
 do 
     sleep 3
 done

@@ -3,7 +3,7 @@
 # Based on Ubuntu 16.04
 #################################################################
 FROM ubuntu:16.04
-MAINTAINER Matthieu Hébert <matthieu.hebert@cloud-temple.com>
+LABEL maintainer="Thomas Kraaibeek <thomaskraaibeek@gmail.com>"
 
 RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
 

@@ -1,6 +1,6 @@
 # Zimbra
 In this Repository you will find how to install Zimbra on Docker
-
+This repository is forked from maattt/zimbra-docker and adds plain authentication mechanism. The password of the admin user is 'pass'.
 # Docker
 ## How to install Docker
 Keep posted of the changes in the next Zimbra Wiki - https://wiki.zimbra.com/wiki/Deploy_Zimbra_Collaboration_using_docker
