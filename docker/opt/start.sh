@@ -146,8 +146,8 @@ then
   /opt/zimbra/libexec/zmsetup.pl -c /opt/zimbra-install/installZimbraScript
 fi
 
-su - zimbra -c 'zmcontrol restart'
-echo "You can now access your Zimbra Collaboration Server"
+#su - zimbra -c 'zmcontrol restart'
+#echo "You can now access your Zimbra Collaboration Server"
 
 echo "Setting up plain auth and changing password"
 su - zimbra -c 'zmprov -l sp admin@zimbra.io pass'
