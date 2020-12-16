@@ -16,9 +16,9 @@ docker pull thomaskraaibeek/zimbra-docker
 ```
 
 ## Creating Zimbra Containers
-Now that we have an image called maattt10/zimbra8.8.15, we can do a docker run with some special parameters, like this:
+Now that we have an image called thomaskraaibeek/zimbra-docker, we can do a docker run with some special parameters, like this:
 ```bash
-docker run -p 25:25 -p 80:80 -p 465:465 -p 587:587 -p 110:110 -p 143:143 -p 993:993 -p 995:995 -p 443:443 -p 8080:8080 -p 8443:8443 -p 7071:7071 -p 9071:9071 -h zimbra-docker.zimbra.io --dns 127.0.0.1 --dns 8.8.8.8 -i -t -e PASSWORD=Zimbra2017 maattt10/zimbra8.8.15
+docker run -p 25:25 -p 80:80 -p 465:465 -p 587:587 -p 110:110 -p 143:143 -p 993:993 -p 995:995 -p 443:443 -p 8080:8080 -p 8443:8443 -p 7071:7071 -p 9071:9071 -h zimbra-docker.zimbra.io --dns 127.0.0.1 --dns 8.8.8.8 -i -t -e PASSWORD=Zimbra2017 thomaskraaibeek/zimbra-docker
 ```
 As you can see we tell the container the ports we want to expose, and on which port, we also specify the container hostname, the password foir the Zimbra Administrator Account, and the image to use.
 
