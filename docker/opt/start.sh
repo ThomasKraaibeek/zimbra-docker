@@ -154,7 +154,13 @@ su - zimbra -c 'zmprov -l sp admin@zimbra.io pass'
 su - zimbra -c 'zmprov -l mcf zimbraReverseProxySendPop3Xoip FALSE'
 su - zimbra -c 'zmprov -l ms zimbra-docker.zimbra.io zimbraReverseProxyPop3SaslPlainEnabled TRUE'
 su - zimbra -c 'zmprov -l ms zimbra-docker.zimbra.io zimbraReverseProxyPop3StartTlsMode on'
+
+echo "Done. Restarting services"
+
 su - zimbra -c 'zmcontrol restart'
+
+echo "Restarting finished."
+
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done
